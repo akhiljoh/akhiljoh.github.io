@@ -122,7 +122,7 @@
                                 <div class="hero-btn-group" data-animation="bounceInDown" data-delay="100ms">
 <!--                                    <a href="#" class="btn alime-btn mb-3 mb-sm-0 mr-4">Get a Quote</a>-->
                                     <a class="btn alime-btn mb-3 mb-sm-0 mr-4" href="mailto:thegreychronicles@gmail.com">Get a Quote</a>
-                                    <a class="btn alime-btn mb-3 mb-sm-0 mr-4" href="tel:6511188888">Connect</a>
+                                    <a class="btn alime-btn mb-3 mb-sm-0 mr-4" href="tel:+1(437)-258-8637">Connect</a>
 <!--                                    <a class="hero-mail-contact" href="thegreychronicles@gmail.com">thegreychronicles@gmail.com</a>-->
                                 </div>
                             </div>
@@ -423,7 +423,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item shots mb-30 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-12 col-sm-6 col-lg-6 single_gallery_item shots mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
                         <img src="images/gallery/shots/3.jpg" alt="">
                         <div class="hover-content">
@@ -431,7 +431,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item shots mb-30 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-12 col-sm-6 col-lg-6 single_gallery_item shots mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
                         <img src="images/gallery/shots/4.jpg" alt="">
                         <div class="hover-content">
@@ -463,7 +463,7 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- shots ends here-->
 
 
                 <!-- search in time starts here-->
@@ -483,7 +483,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="100ms">
+                <div class="col-12 col-sm-6 col-lg-6 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="100ms">
                     <div class="single-portfolio-content">
                         <img src="images/gallery/search-in-time/veteran.jpg" alt="">
                         <div class="hover-content">
@@ -491,7 +491,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="300ms">
+                <div class="col-12 col-sm-6 col-lg-6 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="300ms">
                     <div class="single-portfolio-content">
                         <img src="images/gallery/search-in-time/jungle.jpg" alt="">
                         <div class="hover-content">
@@ -499,7 +499,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="500ms">
+                <div class="col-12 col-sm-6 col-lg-6 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="500ms">
                     <div class="single-portfolio-content">
                         <img src="images/gallery/search-in-time/arch.jpg" alt="">
                         <div class="hover-content">
@@ -516,7 +516,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-md-3 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="700ms">
+                <div class="col-12 col-sm-6 col-lg-6 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="700ms">
                     <div class="single-portfolio-content">
                         <img src="images/gallery/search-in-time/bridge.jpg" alt="">
                         <div class="hover-content">
@@ -524,7 +524,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-3 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="700ms">
+                <div class="col-12 col-sm-6 col-lg-6 single_gallery_item search-in-time mb-30 wow fadeInUp" data-wow-delay="700ms">
                     <div class="single-portfolio-content">
                         <img src="images/gallery/search-in-time/boats.jpg" alt="">
                         <div class="hover-content">
@@ -686,6 +686,11 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             var selector = $(this).attr('data-filter');
             $('.project').hide();
             $(selector).show();
+        });
+
+        var galleryItems = document.querySelectorAll(".single_gallery_item");
+        galleryItems.forEach(function(item) {
+          item.style.display = "none";
         });
     });
 </script>
