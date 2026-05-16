@@ -1668,3 +1668,35 @@ input:required {
     border-radius: 10px; }
 
 /*# sourceMappingURL=style.css.map */
+
+
+/* Custom Home Refresh */
+.hero-highlights {display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 18px;padding:0;}
+.hero-highlights li {background:rgba(255,255,255,0.16);border:1px solid rgba(255,255,255,0.4);color:#fff;padding:8px 14px;border-radius:30px;font-size:13px;letter-spacing:.4px;}
+.value-strip {background:#0f1117;}
+.value-card {background:#181b24;padding:30px 24px;border-radius:14px;margin-bottom:30px;min-height:220px;border:1px solid rgba(255,255,255,0.08);}
+.value-card h4 {color:#fff;font-size:22px;margin-bottom:12px;}
+.value-card p {color:#c9ced8;}
+.home-cta .cta-panel {background:linear-gradient(120deg,#fc6060,#ff8a63);padding:45px 30px;border-radius:16px;text-align:center;box-shadow:0 16px 35px rgba(252,96,96,0.35);}
+.home-cta .cta-panel h3,.home-cta .cta-panel p {color:#fff;}
+.home-cta .cta-panel p {max-width:700px;margin:10px auto 24px;}
+.home-cta .alime-btn {background:#fff;color:#fc6060;border-color:#fff;}
+.home-cta .alime-btn:hover {background:transparent;color:#fff;}
+
+
+html { scroll-behavior: smooth; }
+.cinema-hero,.reel-panel{position:relative;min-height:100vh;display:flex;align-items:center;background-size:cover;background-position:center;background-attachment:fixed;}
+.cinema-hero{background-image:url("images/bg/akhil-bg.jpg");}
+.reel-panel{min-height:72vh;background-image:url("images/bg/akhil-crop-1.jpg");}
+.parallax-overlay{position:absolute;inset:0;background:linear-gradient(130deg,rgba(6,8,14,.82),rgba(6,8,14,.45));}
+.hero-content{position:relative;z-index:2;color:#fff;max-width:860px;}
+.hero-content h1,.hero-content h2{color:#fff;font-size:clamp(2rem,4.5vw,4rem);line-height:1.12;margin-bottom:18px;}
+.hero-content p{color:#d8dde8;max-width:760px;font-size:18px;}
+.hero-kicker{display:inline-block;color:#fff;background:rgba(252,96,96,.9);padding:7px 14px;border-radius:99px;margin-bottom:14px;letter-spacing:.08em;text-transform:uppercase;font-size:12px;}
+.process-strip{background:#0c101a;padding:60px 0;}
+.process-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+.process-grid article{background:#171d2b;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:26px;}
+.process-grid span{color:#fc6060;font-weight:700;}
+.process-grid h4{color:#fff;margin:8px 0;}
+.process-grid p{color:#c5ccda;margin:0;}
+@media (max-width: 991px){.process-grid{grid-template-columns:1fr;}.cinema-hero,.reel-panel{background-attachment:scroll;min-height:80vh;}}
