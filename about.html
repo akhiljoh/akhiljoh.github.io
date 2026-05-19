@@ -1,447 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
-<!-- Mirrored from akhiljohny.com/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 May 2026 14:54:24 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="About Akhil Johny / MONKMONKEY TRIBE — cinematic visual storyteller creating films, lifestyle, and editorial work." />
+  <meta name="theme-color" content="#080808" />
+  <link rel="preload" as="image" href="images/gallery/editorial/hero.jpg" fetchpriority="high" />
+  <title>About | AKHIL JOHNY</title>
 
-    <!-- Title -->
-    <title>AKHIL JOHNY</title>
+  <style>
+    :root {
+      --ink: #080808;
+      --ink-soft: #11100f;
+      --paper: #f0ede8;
+      --white: #ffffff;
+      --ash: #a8a39d;
+      --gold: #c8b89a;
+      --line: rgba(255,255,255,.075);
+      --serif: Georgia, 'Times New Roman', serif;
+      --sans: Arial, Helvetica, sans-serif;
+      --ease: cubic-bezier(.16,1,.3,1);
+      --nav-h: 72px;
+    }
 
-    <!-- Favicon -->
-    <link rel="icon" href="img/core-img/favicon.html">
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    body { background: var(--ink); color: var(--paper); font-family: var(--sans); font-weight: 300; overflow-x: hidden; min-height: 100vh; }
+    img { display: block; max-width: 100%; content-visibility: auto; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
 
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="style.css">
+    #progress { position: fixed; top: 0; left: 0; width: 0%; height: 1.5px; background: var(--gold); z-index: 9000; pointer-events: none; }
 
+    .grain { position: fixed; inset: -200%; width: 400%; height: 400%; pointer-events: none; z-index: 8000; opacity: .018; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); animation: grainShift 1.15s steps(1) infinite; }
+    @keyframes grainShift { 0% { transform: translate(0,0); } 25% { transform: translate(-2%,-2%); } 50% { transform: translate(2%,-1%); } 75% { transform: translate(-1%,2%); } }
+
+    .ambient-orb { position: fixed; z-index: 0; pointer-events: none; border-radius: 50%; opacity: .18; filter: blur(70px); transform: translateZ(0); mix-blend-mode: screen; }
+    .orb-one { width: 34vw; height: 34vw; left: -13vw; top: 72vh; background: radial-gradient(circle, rgba(200,184,154,.28), rgba(200,184,154,0) 68%); }
+    .orb-two { width: 28vw; height: 28vw; right: -10vw; top: 145vh; background: radial-gradient(circle, rgba(255,226,150,.18), rgba(255,226,150,0) 70%); }
+
+    section, nav, footer { position: relative; z-index: 1; }
+
+    .cursor-dot, .cursor-ring { position: fixed; top: 0; left: 0; border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); opacity: 0; z-index: 8999; }
+    .cursor-dot { width: 6px; height: 6px; background: var(--white); }
+    .cursor-ring { width: 38px; height: 38px; border: 1px solid rgba(255,255,255,.35); transition: transform .4s var(--ease), border-color .3s ease, opacity .3s; }
+    body.cursor-on .cursor-dot, body.cursor-on .cursor-ring { opacity: 1; }
+    body.cursor-hover .cursor-ring { transform: translate(-50%, -50%) scale(1.7); border-color: rgba(255,255,255,.6); }
+
+    .site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 500; padding: 30px 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid transparent; transition: background .35s ease, padding .35s ease, border-color .35s ease; }
+    .site-nav.scrolled { background: rgba(8,8,8,.88); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); padding: 18px 48px; border-bottom-color: rgba(255,255,255,.055); }
+    .nav-logo { font-family: var(--serif); font-size: clamp(1.35rem, 2.2vw, 2.1rem); letter-spacing: .28em; color: var(--white); font-weight: 300; }
+    .nav-links { display: flex; gap: 40px; list-style: none; }
+    .nav-links a { font-size: .68rem; letter-spacing: .35em; text-transform: uppercase; color: rgba(255,255,255,.55); transition: color .25s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+
+    .nav-hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 6px; z-index: 502; }
+    .nav-hamburger span { width: 22px; height: 1px; background: rgba(255,255,255,.7); transition: transform .3s ease, opacity .3s ease; }
+    .nav-hamburger.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+    .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+    .nav-hamburger.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+    .nav-mobile { position: fixed; inset: 0; z-index: 499; background: rgba(8,8,8,.97); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px; opacity: 0; pointer-events: none; transition: opacity .35s ease; }
+    .nav-mobile.open { opacity: 1; pointer-events: all; }
+    .nav-mobile a { font-family: var(--serif); font-size: clamp(2.8rem, 12vw, 5.5rem); color: rgba(255,255,255,.58); font-weight: 300; }
+
+    #about-hero { min-height: 92vh; min-height: 92svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--ink); }
+    .about-hero-bg { position: absolute; inset: 0; background-image: url('images/gallery/editorial/hero.jpg'); background-size: cover; background-position: center; filter: brightness(.48) contrast(1.08) saturate(.88); transform: translateZ(0) scale(1.03); will-change: transform; }
+    .about-hero-vignette { position: absolute; inset: 0; background: linear-gradient(to right, rgba(8,8,8,.88), rgba(8,8,8,.48) 45%, rgba(8,8,8,.18)), linear-gradient(to top, rgba(8,8,8,.98), rgba(8,8,8,.44) 50%, transparent); }
+    .about-hero-content { position: relative; z-index: 2; width: 100%; max-width: 1400px; margin: 0 auto; padding: 0 6vw 12vh; }
+    .about-kicker { font-size: .58rem; letter-spacing: .62em; text-transform: uppercase; color: rgba(255,255,255,.34); margin-bottom: 28px; opacity: 0; animation: fadeUp .95s ease forwards .16s; }
+    .about-title { max-width: 1100px; font-family: var(--serif); font-size: clamp(3.1rem, 9vw, 9rem); line-height: .88; font-weight: 300; letter-spacing: -.055em; color: var(--white); opacity: 0; animation: heroTitleLoad 1.25s var(--ease) forwards .24s; }
+    .about-title em { font-style: italic; color: var(--gold); letter-spacing: -.03em; }
+    .about-subline { max-width: 620px; margin-top: 34px; font-family: var(--serif); font-size: clamp(1.05rem, 1.65vw, 1.55rem); line-height: 1.55; color: rgba(255,255,255,.52); opacity: 0; animation: fadeUp .95s ease forwards .46s; }
+
+    .section-breath { display: flex; align-items: center; justify-content: center; gap: 18px; margin: 0 auto 64px; color: rgba(255,255,255,.24); font-size: .54rem; letter-spacing: .42em; text-transform: uppercase; pointer-events: none; }
+    .section-breath i { display: block; width: min(22vw, 220px); height: 1px; background: linear-gradient(to right, transparent, rgba(200,184,154,.48), transparent); transform-origin: center; animation: breathLine 5.6s ease-in-out infinite; }
+    @keyframes breathLine { 0%, 100% { transform: scaleX(.74); opacity: .38; } 50% { transform: scaleX(1); opacity: .72; } }
+
+    #story { padding: 118px 6vw 110px; background: radial-gradient(circle at 80% 0%, rgba(200,184,154,.06), transparent 34%), var(--ink); }
+    .story-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: minmax(260px, 430px) 1fr; gap: 72px; align-items: start; }
+    .story-label { font-size: .58rem; letter-spacing: .62em; text-transform: uppercase; color: rgba(255,255,255,.24); margin-bottom: 34px; display: flex; align-items: center; gap: 18px; }
+    .story-label::before { content: ''; width: 54px; height: 1px; background: linear-gradient(to right, rgba(200,184,154,.65), rgba(200,184,154,0)); }
+    .story-left h2 { font-family: var(--serif); font-size: clamp(3.2rem, 6vw, 7rem); line-height: .84; font-weight: 300; letter-spacing: -.055em; color: var(--white); }
+    .story-left h2 em { color: var(--gold); font-style: italic; display: inline-block; transform: translateX(18px); }
+    .story-copy { display: grid; gap: 24px; }
+    .story-copy p { font-family: var(--serif); font-size: clamp(1.05rem, 1.45vw, 1.35rem); line-height: 1.78; color: rgba(255,255,255,.66); font-weight: 300; }
+    .story-copy p.small { font-family: var(--sans); font-size: .72rem; line-height: 2.1; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.32); max-width: 650px; }
+
+    #philosophy { background: #f5f1ea; padding: 118px 6vw; position: relative; overflow: hidden; }
+    #philosophy::before { content: 'AJ'; position: absolute; top: -70px; right: 4vw; font-family: var(--serif); font-size: clamp(15rem, 30vw, 34rem); color: rgba(8,8,8,.045); line-height: 1; pointer-events: none; user-select: none; }
+    .philosophy-inner { position: relative; max-width: 960px; margin: 0 auto; z-index: 1; }
+    .philosophy-eyebrow { font-size: .58rem; letter-spacing: .54em; text-transform: uppercase; color: rgba(0,0,0,.34); margin-bottom: 34px; }
+    .philosophy-text { font-family: var(--serif); font-size: clamp(1.45rem, 3vw, 3rem); line-height: 1.24; font-weight: 300; color: rgba(0,0,0,.82); letter-spacing: -.025em; }
+    .philosophy-text em { color: #8b6f3f; font-style: italic; }
+    .philosophy-note { margin-top: 34px; max-width: 640px; font-size: .72rem; line-height: 2.1; letter-spacing: .18em; text-transform: uppercase; color: rgba(0,0,0,.42); }
+
+    #values { padding: 112px 6vw 118px; background: linear-gradient(180deg, rgba(8,8,8,1), rgba(17,16,15,1)); border-top: 1px solid rgba(255,255,255,.055); border-bottom: 1px solid rgba(255,255,255,.055); }
+    .values-wrap { max-width: 1180px; margin: 0 auto; }
+    .values-header { display: flex; justify-content: space-between; gap: 40px; align-items: end; margin-bottom: 54px; }
+    .values-title { font-family: var(--serif); font-size: clamp(2.4rem, 5.4vw, 6.2rem); line-height: .88; font-weight: 300; color: var(--white); letter-spacing: -.045em; }
+    .values-title em { color: var(--gold); font-style: italic; }
+    .values-desc { max-width: 430px; font-size: .72rem; line-height: 2.05; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.32); }
+    .value-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .value-card { min-height: 220px; border: 1px solid rgba(255,255,255,.085); background: rgba(255,255,255,.028); padding: 26px; display: flex; flex-direction: column; justify-content: space-between; transition: transform .3s ease, border-color .3s ease, background .3s ease; }
+    .value-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.045); }
+    .value-card span { font-size: .56rem; letter-spacing: .32em; color: rgba(255,255,255,.28); text-transform: uppercase; }
+    .value-card h3 { font-family: var(--serif); font-size: clamp(1.45rem, 2.1vw, 2.2rem); font-weight: 300; color: rgba(255,255,255,.84); }
+    .value-card p { font-size: .75rem; line-height: 1.85; color: rgba(255,255,255,.42); }
+
+    #process { padding: 118px 6vw; background: var(--ink); }
+    .process-wrap { max-width: 1040px; margin: 0 auto; }
+    .process-row { display: grid; grid-template-columns: 120px 1fr; gap: 36px; padding: 34px 0; border-top: 1px solid rgba(255,255,255,.08); }
+    .process-row:last-child { border-bottom: 1px solid rgba(255,255,255,.08); }
+    .process-num { font-family: var(--serif); font-size: 2.4rem; color: rgba(200,184,154,.55); }
+    .process-row h3 { font-family: var(--serif); font-size: clamp(1.6rem, 3vw, 3.3rem); font-weight: 300; line-height: 1; color: var(--white); margin-bottom: 18px; }
+    .process-row p { max-width: 680px; font-size: .82rem; line-height: 2; letter-spacing: .08em; color: rgba(255,255,255,.42); }
+
+    #contact { text-align: center; background: var(--ink); padding: 110px 6vw; }
+    .contact-eyebrow { font-size: .6rem; letter-spacing: .48em; text-transform: uppercase; color: var(--ash); margin-bottom: 24px; }
+    .contact-title { font-family: var(--serif); font-size: clamp(3rem, 9vw, 8rem); font-weight: 300; line-height: .92; color: var(--white); margin-bottom: 52px; }
+    .contact-title em { color: var(--gold); font-style: italic; }
+    .contact-links { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .contact-links a { font-size: .66rem; letter-spacing: .26em; text-transform: uppercase; color: rgba(255,255,255,.48); border: 1px solid rgba(255,255,255,.12); padding: 14px 26px; transition: color .3s ease, background .3s ease, border-color .3s ease; }
+    .contact-links a:hover { color: var(--ink); background: var(--white); border-color: var(--white); }
+
+    .site-footer { padding: 28px 6vw; border-top: 1px solid rgba(255,255,255,.055); display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; background: var(--ink); }
+    .footer-copy { font-size: .58rem; letter-spacing: .2em; color: rgba(255,255,255,.2); }
+    .footer-social { display: flex; gap: 28px; }
+    .footer-social a { font-size: .6rem; letter-spacing: .28em; text-transform: uppercase; color: rgba(255,255,255,.3); transition: color .25s; }
+    .footer-social a:hover { color: var(--white); }
+
+    .reveal { opacity: 0; transform: translateY(34px); transition: opacity 1s ease, transform 1.05s var(--ease); will-change: transform, opacity; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes heroTitleLoad { from { opacity: 0; transform: translateY(18px) scale(.985); filter: blur(6px); } to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); } }
+
+    @media (max-width: 900px) {
+      .story-grid { grid-template-columns: 1fr; gap: 44px; }
+      .values-header { flex-direction: column; align-items: flex-start; }
+      .value-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 768px) {
+      .site-nav { padding: 20px 22px; }
+      .site-nav.scrolled { padding: 14px 22px; }
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .about-hero-content { padding: 0 6vw 10vh; }
+      #story, #philosophy, #values, #process, #contact { padding-left: 5vw; padding-right: 5vw; }
+      .process-row { grid-template-columns: 1fr; gap: 12px; }
+      .footer-social { gap: 18px; }
+    }
+    @media (pointer: coarse) {
+      .cursor-dot, .cursor-ring { display: none; }
+      .grain { opacity: .012; }
+      .ambient-orb { opacity: .10; filter: blur(58px); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      html { scroll-behavior: auto; }
+      .about-hero-bg, .ambient-orb { transform: none !important; }
+    }
+  </style>
 </head>
 
 <body>
-    <!-- Preloader -->
-<!--    <div id="preloader">-->
-<!--        <div class="loader"></div>-->
-<!--    </div>-->
-    <!-- /Preloader -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+  <div id="progress" aria-hidden="true"></div>
+  <div class="grain" id="grain" aria-hidden="true"></div>
+  <div class="ambient-orb orb-one" data-float="0.10" aria-hidden="true"></div>
+  <div class="ambient-orb orb-two" data-float="-0.07" aria-hidden="true"></div>
 
-    <!-- Top Search Form Area -->
-    <div class="top-search-area">
-        <div class="modal fade" id="searchModal" tabindex="-1" role="dialog" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-body">
-                        <!-- Close -->
-                        <button type="button" class="btn close-btn" data-dismiss="modal"><i class="ti-close"></i></button>
-                        <!-- Form -->
-                        <form action="https://akhiljohny.com/index.html" method="post">
-                            <input type="search" name="top-search-bar" class="form-control" placeholder="Search and hit enter...">
-                            <button type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+  <div class="nav-mobile" id="navMobile" role="dialog" aria-label="Navigation menu">
+    <a href="index.html" onclick="closeMenu()">Home</a>
+    <a href="about.html" onclick="closeMenu()">About</a>
+    <a href="index.html#works" onclick="closeMenu()">Work</a>
+    <a href="#contact" onclick="closeMenu()">Contact</a>
+  </div>
+
+  <nav class="site-nav" id="siteNav">
+    <a class="nav-logo" href="index.html">AKHIL JOHNY</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a class="active" href="about.html">About</a></li>
+      <li><a href="index.html#works">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle navigation" aria-expanded="false" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <section id="about-hero">
+    <div class="about-hero-bg" id="aboutHeroBg"></div>
+    <div class="about-hero-vignette"></div>
+    <div class="about-hero-content">
+      <p class="about-kicker">About the storyteller</p>
+      <h1 class="about-title">I don’t follow <em>passion.</em><br>I follow purpose.</h1>
+      <p class="about-subline">Akhil Johny creates cinematic stories, portraits, and branded visuals with a quiet focus on emotion, atmosphere, and human connection.</p>
     </div>
+  </section>
 
-    <!-- Header Area Start -->
-    <header class="header-area">
-        <!-- Main Header Start -->
-        <div class="main-header-area">
-            <div class="classy-nav-container breakpoint-off">
-                <div class="container">
-                    <!-- Classy Menu -->
-                    <nav class="classy-navbar justify-content-between" id="alimeNav">
-
-                        <!-- Logo -->
-                        <a class="nav-brand" href="index-2.html"><img src="img/core-img/logo.html" alt=""></a>
-
-                        <!-- Navbar Toggler -->
-                        <div class="classy-navbar-toggler">
-                            <span class="navbarToggler"><span></span><span></span><span></span></span>
-                        </div>
-
-                        <!-- Menu -->
-                        <div class="classy-menu">
-                            <!-- Menu Close Button -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-                            <!-- Nav Start -->
-                            <div class="classynav">
-                                <ul id="nav">
-                                    <li><a href="index-2.html">Home</a></li>
-<!--                                    <li><a href="#">Pages</a>-->
-<!--                                        <ul class="dropdown">-->
-<!--                                            <li><a href="./index.html">- Home</a></li>-->
-<!--                                            <li><a href="./about.html">- About</a></li>-->
-<!--                                            <li><a href="./gallery.html">- Gallery</a></li>-->
-<!--                                            <li><a href="./blog.html">- Blog</a></li>-->
-<!--                                            <li><a href="./single-blog.html">- Blog Details</a></li>-->
-<!--                                            <li><a href="./contact.html">- Contact</a></li>-->
-<!--                                            <li><a href="#">- Dropdown</a>-->
-<!--                                                <ul class="dropdown">-->
-<!--                                                    <li><a href="#">- Dropdown Item</a></li>-->
-<!--                                                    <li><a href="#">- Dropdown Item</a></li>-->
-<!--                                                    <li><a href="#">- Dropdown Item</a></li>-->
-<!--                                                    <li><a href="#">- Dropdown Item</a></li>-->
-<!--                                                </ul>-->
-<!--                                            </li>-->
-<!--                                        </ul>-->
-<!--                                    </li>-->
-                                    <li class="active"><a href="about.html">About</a></li>
-<!--                                    <li><a href="./gallery.html">Gallery</a></li>-->
-<!--                                    <li><a href="./blog.html">Blog</a></li>-->
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-
-                                <!-- Search Icon -->
-<!--                                <div class="search-icon" data-toggle="modal" data-target="#searchModal"><i class="ti-search"></i></div>-->
-                            </div>
-                            <!-- Nav End -->
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header Area End -->
-
-    <!-- Breadcrumb Area Start -->
-    <section class="breadcrumb-area bg-img bg-overlay jarallax" style="background-image: url(images/bg/akhil-crop-1.jpg);">
-        <div class="container h-100">
-            <div class="row h-100 align-items-center">
-                <div class="col-12">
-                    <div class="breadcrumb-content text-center">
-                        <h2 class="page-title">About Us</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb justify-content-center">
-                                <li class="breadcrumb-item"><a href="index-2.html"><i class="icon_house_alt"></i> Home</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">About</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Breadcrumb Area End -->
-
-    <!-- About Us Area Start -->
-    <div class="about-us-area section-padding-80-0 clearfix">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-12 col-lg-6">
-                    <div class="about-us-content mb-80">
-                        <h3 class="wow fadeInUp" data-wow-delay="100ms"><u>I don't follow the passion</u></h3>
-<!--                        <div class="line wow fadeInUp" data-wow-delay="200ms"></div>-->
-                        <p class="wow fadeInUp" data-wow-delay="300ms">Within the confines of my beliefs, I hold a strong conviction that unwavering determination is an essential component in achieving one's objectives, surpassing the allure of mere passion. I am deeply committed to my mission of effecting positive change within society through my endeavors, firmly believing that my actions can contribute to a better world.</p>
-                        <p class="wow fadeInUp" data-wow-delay="400ms"> To realize this vision, I am resolutely dedicated to honing the requisite skills and knowledge to make a lasting impact</p>
-                        <a class="btn alime-btn btn-2 mt-30 wow fadeInUp" data-wow-delay="500ms" href="mailto:thegreychronicles@gmail.com">Get a Quote</a>
-                        <a class="btn alime-btn btn-2 mt-30 wow fadeInUp" data-wow-delay="500ms" href="tel:+1(437)-258-8637">Connect</a>
-                    </div>
-                </div>
-<!--                <div class="col-12 col-lg-6">-->
-<!--                    <div class="about-video-area mb-80 wow fadeInUp" data-wow-delay="100ms">-->
-<!--                        <img src="img/bg-img/17.jpg" alt="">-->
-<!--                        <div class="video-icon">-->
-<!--                            <a href="https://www.youtube.com/watch?v=sSakBz_eYzQ" class="video-play-btn"><i class="arrow_triangle-right"></i></a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
-        </div>
+  <section id="story">
+    <div class="section-breath" aria-hidden="true">
+      <span>01</span>
+      <i></i>
+      <span>Origin</span>
     </div>
-    <!-- About Us Area End -->
-
-    <!-- Why Choose Us Area Start -->
-    <section class="why-choose-us-area bg-gray section-padding-80-0 clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">
-                        <h2>Why Choose Me</h2>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <!-- Single Why Choose Area -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="chosse-us-icon">
-                            <i class="fa fa-film" aria-hidden="true"></i>
-                        </div>
-                        <h4>Unparalleled Creativity</h4>
-                        <p>I pride myself on my ability to generate unique and captivating ideas tailored to your brand and project.</p>
-                    </div>
-                </div>
-
-                <!-- Single Why Choose Area -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="chosse-us-icon">
-                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                        </div>
-                        <h4>Meticulous Planning</h4>
-                        <p>My commitment to detail ensures that every aspect of the shoot is flawlessly executed.</p>
-                    </div>
-                </div>
-
-                <!-- Single Why Choose Area -->
-                <div class="col-md-6 col-lg-4">
-                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="500ms">
-                        <div class="chosse-us-icon">
-                            <i class="fa fa-group" aria-hidden="true"></i>
-                        </div>
-                        <h4>Proven Expertise</h4>
-                        <p>With a track record of successful projects, I have the skills and experience to deliver exceptional results.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="500ms">
-                        <div class="chosse-us-icon">
-                            <i class="fa fa-handshake-o" aria-hidden="true"></i>
-                        </div>
-                        <h4>Client-Centric Approach</h4>
-                        <p>Your goals and objectives are my top priority, and I tailor my ideas and solutions accordingly.</p>
-                    </div>
-                </div>
-
-                <div class="col-md-6 col-lg-4">
-                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="500ms">
-                        <div class="chosse-us-icon">
-                            <i class="fa fa-comments" aria-hidden="true"></i>
-                        </div>
-                        <h4>Effective Communication</h4>
-                        <p>I will keep you involved throughout the process, ensuring your vision is realized as you intended</p>
-                    </div>
-                </div>
-
-<!--                <div class="col-md-6 col-lg-4">-->
-<!--                    <div class="why-choose-us-content text-center mb-80 wow fadeInUp" data-wow-delay="500ms">-->
-<!--                        <div class="chosse-us-icon">-->
-<!--                            <i class="fa fa-camera" aria-hidden="true"></i>-->
-<!--                        </div>-->
-<!--                        <h4>Modern Equipments</h4>-->
-<!--                        <p>Lorem ipsum dolor sit amet, consectetur isicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut elit, sed do eiusmod te</p>-->
-<!--                    </div>-->
-<!--                </div>-->
-            </div>
-        </div>
-    </section>
-    <!-- Why Choose  us Area End -->
-
-<!--    &lt;!&ndash; Our Team Area Start &ndash;&gt;-->
-<!--    <section class="our-team-area section-padding-80-50">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-12">-->
-<!--                    <div class="section-heading text-center wow fadeInUp" data-wow-delay="100ms">-->
-<!--                        <h2>Our Team</h2>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="row">-->
-<!--                &lt;!&ndash; Team Member Area &ndash;&gt;-->
-<!--                <div class="col-md-6 col-xl-3">-->
-<!--                    <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="100ms">-->
-<!--                        <div class="member-thumb">-->
-<!--                            <img src="img/bg-img/19.jpg" alt="">-->
-<!--                        </div>-->
-<!--                        <h5>Andrew Dean</h5>-->
-<!--                        <span>Photographer</span>-->
-<!--                        <div class="member-social-info">-->
-<!--                            <a href="#"><i class="ti-facebook"></i></a>-->
-<!--                            <a href="#"><i class="ti-twitter-alt"></i></a>-->
-<!--                            <a href="#"><i class="ti-linkedin"></i></a>-->
-<!--                            <a href="#"><i class="ti-pinterest"></i></a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                &lt;!&ndash; Team Member Area &ndash;&gt;-->
-<!--                <div class="col-md-6 col-xl-3">-->
-<!--                    <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="300ms">-->
-<!--                        <div class="member-thumb">-->
-<!--                            <img src="img/bg-img/20.jpg" alt="">-->
-<!--                        </div>-->
-<!--                        <h5>Tommy Kim</h5>-->
-<!--                        <span>Photographer</span>-->
-<!--                        <div class="member-social-info">-->
-<!--                            <a href="#"><i class="ti-facebook"></i></a>-->
-<!--                            <a href="#"><i class="ti-twitter-alt"></i></a>-->
-<!--                            <a href="#"><i class="ti-linkedin"></i></a>-->
-<!--                            <a href="#"><i class="ti-pinterest"></i></a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                &lt;!&ndash; Team Member Area &ndash;&gt;-->
-<!--                <div class="col-md-6 col-xl-3">-->
-<!--                    <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="500ms">-->
-<!--                        <div class="member-thumb">-->
-<!--                            <img src="img/bg-img/21.jpg" alt="">-->
-<!--                        </div>-->
-<!--                        <h5>Max McCormick</h5>-->
-<!--                        <span>Photographer</span>-->
-<!--                        <div class="member-social-info">-->
-<!--                            <a href="#"><i class="ti-facebook"></i></a>-->
-<!--                            <a href="#"><i class="ti-twitter-alt"></i></a>-->
-<!--                            <a href="#"><i class="ti-linkedin"></i></a>-->
-<!--                            <a href="#"><i class="ti-pinterest"></i></a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                &lt;!&ndash; Team Member Area &ndash;&gt;-->
-<!--                <div class="col-md-6 col-xl-3">-->
-<!--                    <div class="team-content-area text-center mb-30 wow fadeInUp" data-wow-delay="700ms">-->
-<!--                        <div class="member-thumb">-->
-<!--                            <img src="img/bg-img/22.jpg" alt="">-->
-<!--                        </div>-->
-<!--                        <h5>Robert Ward</h5>-->
-<!--                        <span>Photographer</span>-->
-<!--                        <div class="member-social-info">-->
-<!--                            <a href="#"><i class="ti-facebook"></i></a>-->
-<!--                            <a href="#"><i class="ti-twitter-alt"></i></a>-->
-<!--                            <a href="#"><i class="ti-linkedin"></i></a>-->
-<!--                            <a href="#"><i class="ti-pinterest"></i></a>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--    &lt;!&ndash; Our Team Area End &ndash;&gt;-->
-
-    <!-- Follow Area Start -->
-    <div class="follow-area clearfix">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-heading text-center">
-                        <h2>Follow Instagram</h2>
-                        <a href="https://www.instagram.com/thegrey.chronicles/" target="_blank">@thegrey.chronicles</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Instagram Feed Area -->
-        <div class="instragram-feed-area owl-carousel">
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="images/gallery/search-in-life-sq/train_sq.jpg" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="https://www.instagram.com/p/CpKZ7DxynXF/" target="_blank">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>thegrey.chronicles</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="images/gallery/search-in-life-sq/red-mountain_sq.jpg" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="https://www.instagram.com/p/CpH6xWlMGjz/" target="_blank">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>thegrey.chronicles</span>
-                    </a>
-                </div>
-            </div>
-                        <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="images/gallery/search-in-life-sq/camel_sq.jpg" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="https://www.instagram.com/p/CpKZ7DxynXF/" target="_blank">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>thegrey.chronicles</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="images/gallery/search-in-life-sq/waterfall_sq.jpg" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="https://www.instagram.com/p/Cowqng2SOSM/" target="_blank">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>thegrey.chronicles</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="images/gallery/search-in-life-sq/hike_sq.jpg" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="https://www.instagram.com/p/CnwtaNqSfES/" target="_blank">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>thegrey.chronicles</span>
-                    </a>
-                </div>
-            </div>
-            <!-- Single Instagram Item -->
-            <div class="single-instagram-item">
-                <img src="images/gallery/search-in-life-sq/green-mountain_sq.jpg" alt="">
-                <div class="instagram-hover-content text-center d-flex align-items-center justify-content-center">
-                    <a href="https://www.instagram.com/p/CnsXwVLM4zA/" target="_blank">
-                        <i class="ti-instagram" aria-hidden="true"></i>
-                        <span>thegrey.chronicles</span>
-                    </a>
-                </div>
-            </div>
-
-        </div>
+    <div class="story-grid reveal">
+      <div class="story-left">
+        <div class="story-label">MONKMONKEY TRIBE</div>
+        <h2>Visuals with<br><em>memory.</em></h2>
+      </div>
+      <div class="story-copy">
+        <p>I believe the strongest work does not begin with a camera. It begins with attention — to people, to silence, to the small details that reveal what a moment is truly about.</p>
+        <p>My work is built around cinematic storytelling: shaping images that feel honest, intentional, and emotionally alive. Whether it is film, lifestyle, editorial, or brand work, the goal is always the same — to create something that stays with people.</p>
+        <p class="small">This is not just a portfolio. It is a growing record of stories, collaborations, experiments, and human moments shaped through light, movement, composition, and feeling.</p>
+      </div>
     </div>
-    <!-- Follow Area End -->
+  </section>
 
-    <!-- Footer Area Start -->
-    <footer class="footer-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-content d-flex align-items-center justify-content-between">
-                        <!-- Copywrite Text -->
-                        <div class="copywrite-text">
-                            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This portfolio is made with <i class="fa fa-heart-o" aria-hidden="true"></i></a></p>
-                        </div>
-                        <!-- Footer Logo -->
-                        <div class="footer-logo">
-                            <a href="#"><img src="img/core-img/logo2.html" alt=""></a>
-                        </div>
-                        <!-- Social Info -->
-                        <div class="social-info">
-                            <a href="https://www.youtube.com/channel/UCltke23YVtubHicu7zCT5aw" target="_blank"><i class="ti-youtube" aria-hidden="true"></i></a>
-                            <a href="https://www.linkedin.com/in/akhil-johny-41b84a180" target="_blank"><i class="ti-linkedin" aria-hidden="true"></i></a>
-                            <a href="https://www.instagram.com/thegrey.chronicles/"  target="_blank"><i class="ti-instagram" aria-hidden="true"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!-- Footer Area End -->
+  <section id="philosophy">
+    <div class="philosophy-inner reveal">
+      <p class="philosophy-eyebrow">Creative Philosophy</p>
+      <p class="philosophy-text">I am drawn to stories that feel human before they feel polished. The frame should carry intention. The movement should feel alive. The final image should feel like it was <em>found, not forced.</em></p>
+      <p class="philosophy-note">The old About page said determination matters more than passion. This version keeps that same belief, but presents it with the cinematic voice of the new website.</p>
+    </div>
+  </section>
 
-    <!-- **** All JS Files ***** -->
-    <!-- jQuery 2.2.4 -->
-    <script src="js/jquery.min.js"></script>
-    <!-- Popper -->
-    <script src="js/popper.min.js"></script>
-    <!-- Bootstrap -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- All Plugins -->
-    <script src="js/alime.bundle.js"></script>
-    <!-- Active -->
-    <script src="js/default-assets/active.js"></script>
+  <section id="values">
+    <div class="section-breath" aria-hidden="true">
+      <span>02</span>
+      <i></i>
+      <span>Practice</span>
+    </div>
+    <div class="values-wrap">
+      <div class="values-header reveal">
+        <h2 class="values-title">Why work<br><em>with me?</em></h2>
+        <p class="values-desc">A calm, intentional approach to visual storytelling — from idea to execution, from first frame to final delivery.</p>
+      </div>
+      <div class="value-grid reveal">
+        <article class="value-card"><span>01</span><h3>Creative Direction</h3><p>Ideas shaped around story, emotion, and brand identity — not just visuals for the sake of visuals.</p></article>
+        <article class="value-card"><span>02</span><h3>Meticulous Planning</h3><p>Every shoot is approached with structure, clarity, and attention to the details that make the final piece feel premium.</p></article>
+        <article class="value-card"><span>03</span><h3>Cinematic Execution</h3><p>Lighting, movement, color, and composition are treated as storytelling tools, not technical decoration.</p></article>
+        <article class="value-card"><span>04</span><h3>Human Connection</h3><p>The work is guided by people first — their energy, their rhythm, their story, and the feeling they want to leave behind.</p></article>
+        <article class="value-card"><span>05</span><h3>Clear Communication</h3><p>From pre-production to delivery, the process stays collaborative, grounded, and easy to understand.</p></article>
+        <article class="value-card"><span>06</span><h3>Purposeful Delivery</h3><p>The final result is designed to feel useful, beautiful, and emotionally connected to the audience it is made for.</p></article>
+      </div>
+    </div>
+  </section>
 
+  <section id="process">
+    <div class="section-breath" aria-hidden="true">
+      <span>03</span>
+      <i></i>
+      <span>Process</span>
+    </div>
+    <div class="process-wrap reveal">
+      <div class="process-row">
+        <div class="process-num">01</div>
+        <div><h3>Listen</h3><p>Understanding the story, the audience, the feeling, and the purpose behind the project.</p></div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">02</div>
+        <div><h3>Shape</h3><p>Building the visual direction through mood, references, pacing, locations, and production decisions.</p></div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">03</div>
+        <div><h3>Create</h3><p>Capturing the project with intention, flexibility, and a focus on authentic moments.</p></div>
+      </div>
+      <div class="process-row">
+        <div class="process-num">04</div>
+        <div><h3>Refine</h3><p>Editing, color, rhythm, and final delivery shaped until the story feels complete.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="contact-eyebrow reveal">For Films, Stories &amp; Collaborations</p>
+    <h2 class="contact-title reveal">Let's Build<br><em>Something Meaningful</em></h2>
+    <div class="contact-links reveal">
+      <a href="mailto:monkmonkeytribe@gmail.com">monkmonkeytribe@gmail.com</a>
+      <a href="tel:+14372588637">+1 (437) 258-8637</a>
+      <a href="https://www.instagram.com/akil.johny/" target="_blank" rel="noopener noreferrer">@akil.johny</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <p class="footer-copy">&copy; <span id="year"></span> Akhil Johny. All rights reserved.</p>
+    <nav class="footer-social" aria-label="Social links">
+      <a href="https://www.youtube.com/channel/UCltke23YVtubHicu7zCT5aw" target="_blank" rel="noopener noreferrer">YouTube</a>
+      <a href="https://www.linkedin.com/in/akhil-johny-41b84a180" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://www.instagram.com/akil.johny/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    </nav>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const hamburger = document.getElementById('hamburger');
+    const navMobile = document.getElementById('navMobile');
+
+    function toggleMenu() {
+      const open = navMobile.classList.toggle('open');
+      hamburger.classList.toggle('open');
+      document.body.style.overflow = open ? 'hidden' : '';
+      hamburger.setAttribute('aria-expanded', open);
+    }
+
+    function closeMenu() {
+      navMobile.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    navMobile.addEventListener('click', e => {
+      if (e.target === navMobile) closeMenu();
+    });
+
+    const siteNav = document.getElementById('siteNav');
+    const aboutHeroBg = document.getElementById('aboutHeroBg');
+    const progress = document.getElementById('progress');
+    const floatEls = document.querySelectorAll('[data-float]');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+    let raf = false;
+    let lastScrollY = -1;
+
+    function onScroll() {
+      if (!raf) {
+        requestAnimationFrame(() => {
+          const s = window.scrollY;
+          if (Math.abs(s - lastScrollY) < 1) { raf = false; return; }
+          lastScrollY = s;
+          const docH = document.documentElement.scrollHeight - window.innerHeight;
+          siteNav.classList.toggle('scrolled', s > 60);
+          progress.style.width = docH > 0 ? (s / docH * 100) + '%' : '0%';
+
+          if (!reduceMotion) {
+            if (s < window.innerHeight * 1.2) {
+              const heroSpeed = coarsePointer ? 0.10 : 0.20;
+              aboutHeroBg.style.transform = `translate3d(0, ${s * heroSpeed}px, 0) scale(1.03)`;
+            }
+
+            if (!coarsePointer) {
+              floatEls.forEach(el => {
+                const speed = Number(el.dataset.float || 0.08);
+                el.style.transform = `translate3d(0, ${s * speed}px, 0)`;
+              });
+            }
+          }
+          raf = false;
+        });
+        raf = true;
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    const dot = document.getElementById('cursorDot');
+    const ring = document.getElementById('cursorRing');
+    if (window.matchMedia('(pointer: fine)').matches) {
+      document.body.classList.add('cursor-on');
+      document.body.style.cursor = 'none';
+      let mx = 0, my = 0, rx = 0, ry = 0;
+      window.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; }, { passive: true });
+      document.querySelectorAll('a, button, .value-card').forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
+      });
+      (function tick() {
+        dot.style.cssText = `left:${mx}px;top:${my}px`;
+        rx += (mx - rx) * 0.12;
+        ry += (my - ry) * 0.12;
+        ring.style.cssText = `left:${rx}px;top:${ry}px`;
+        requestAnimationFrame(tick);
+      })();
+    }
+
+    const grain = document.getElementById('grain');
+    document.addEventListener('visibilitychange', () => {
+      if (grain) grain.style.animationPlayState = document.hidden ? 'paused' : 'running';
+    });
+  </script>
 </body>
-
-
-<!-- Mirrored from akhiljohny.com/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 May 2026 14:54:24 GMT -->
 </html>
