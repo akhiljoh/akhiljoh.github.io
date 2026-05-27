@@ -872,7 +872,11 @@
 
     .video-thumb,
     .showreel-thumb,
-.video-thumb {
+    .photo-item {
+      contain: layout paint;
+    }
+
+    .video-thumb {
       position: relative;
       aspect-ratio: 16 / 9;
       background: #050505;
@@ -1651,7 +1655,10 @@ img {
   color: rgba(255,255,255,.42);
 }
 
-.vplay-btn,
+.vplay-btn {
+  box-shadow: 0 10px 34px rgba(0,0,0,.34);
+}
+
 /* Photo grids */
 .photo-item {
   box-shadow:
